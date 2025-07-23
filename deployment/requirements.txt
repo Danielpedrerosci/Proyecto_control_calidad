@@ -1,4 +1,5 @@
-streamlit
+streamlit==1.35.0
 tensorflow==2.18.0
-numpy
-gdown
+numpy==1.26.4
+gdown==5.2.0
+
