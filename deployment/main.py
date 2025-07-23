@@ -4,12 +4,12 @@ import numpy as np
 import os
 import gdown
 
-model_id = "1e3UUo8IP0hM2mr2UkF2d8xOCEcrhYs79"  
+model_id = "1okI_6pifdyF77v7O7_NkviyrCKdnMF3o"  
 model_url = f"https://drive.google.com/uc?id={model_id}"
 
-if not os.path.exists("trained_best_model.keras"):
-    gdown.download(model_url, "trained_best_model.keras", quiet=False)
-model = tf.keras.models.load_model("trained_best_model.keras")
+if not os.path.exists("trained_best_model.h5"):
+    gdown.download(model_url, "trained_best_model.h5", quiet=False)
+model = tf.keras.models.load_model("trained_best_model.h5")
 
 def model_prediction(test_image):
     model = tf.keras.models.load_model("trained_best_model.keras")
