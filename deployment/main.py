@@ -1,6 +1,16 @@
 import streamlit as st
 import tensorflow as tf 
 import numpy as np 
+import os
+import gdown
+
+model_id = "1e3UUo8IP0hM2mr2UkF2d8xOCEcrhYs79"  
+model_url = f"https://drive.google.com/uc?id={model_id}"
+
+if not os.path.exists("trained_best_model.keras"):
+    gdown.download(model_url, "trained_best_model.keras", quiet=False)
+model = tf.keras.models.load_model("trained_best_model.keras")
+
 def model_prediction(test_image):
     model = tf.keras.models.load_model("trained_best_model.keras")
     image = tf.keras.preprocessing.image.load_img(test_image, target_size=(128,128))
